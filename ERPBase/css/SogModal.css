@@ -1,0 +1,90 @@
+﻿/*弹出层*/
+.SogModal {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -700px;
+    z-index: 5;
+    width: 600px;
+    display: none;
+}
+
+    .SogModal .modal_title {
+        height: 40px;
+        line-height: 40px;
+        color: rgb(255, 255, 255);
+        background: rgb(59, 185, 239);
+        text-align: center;
+        border-radius: 6px 6px 0px 0px;
+        position: relative;
+        font-weight: bold;
+        cursor: move;
+    }
+
+.modal_item {
+    padding: 7px 0px;
+}
+
+.modal_item_title {
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.modal_item_content {
+    width: 400px;
+    display: inline-block;
+}
+
+.modal_content {
+    background-color: #fff;
+    max-height: 600px;
+    overflow-y: auto;
+    min-height: 300px;
+}
+
+.modal_function {
+    height: 50px;
+    text-align: center;
+    border-top: 1px solid #b7e5f9;
+    padding-top: 10px;
+    background-color: #fff;
+    border-radius: 0px 0px 6px 6px;
+}
+
+.btn_full {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    background-color: rgb(59, 185, 239);
+    border: 1px solid rgb(59, 185, 239);
+    color: #fff;
+    line-height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn_empty {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid rgb(59, 185, 239);
+    color: rgb(59, 185, 239);
+    line-height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.modal_title i {
+    padding: 10px 10px 0px 0px;
+    font-size: 22px;
+    cursor: pointer;
+}

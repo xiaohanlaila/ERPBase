@@ -1,0 +1,408 @@
+﻿
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <link href="../css/font-awesome4.7/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/pick.css" rel="stylesheet" />
+    <script src="js/datepicker2.js"></script>
+    <style>
+        .abc {
+            position: fixed;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #333, #666, #eee);
+            opacity: 0.05;
+            transition: transform .3s, opacity .5s;
+        }
+    </style>
+
+    <style>
+        input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #ccc !important;
+        }
+
+        input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #ccc !important;
+        }
+
+        input:-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #ccc !important;
+        }
+
+        input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ccc !important;
+        }
+
+        .icon_back {
+            float: left;
+            display: inline-block;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg) translateY(10px);
+            border-top: 0px;
+            border-right: 0px;
+        }
+
+        .icon_more {
+            float: right;
+            line-height: 30px;
+            position: relative;
+        }
+
+        .icon_msg_num {
+            background-color: red;
+            color: #fff;
+            position: absolute;
+            top: -5px;
+            right: -15px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            padding: 0px;
+            line-height: 20px;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        body, html {
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .head {
+            color: #fff;
+            background-color: rgba(96,199,146,1);
+            text-align: center;
+            padding: 15px 20px 0px 20px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .container {
+            background-color: #eee;
+        }
+
+        .form {
+            margin-top: 5px;
+            background-color: #fff;
+        }
+
+            .form .item {
+                height: 50px;
+                border-bottom: 1px solid #eee;
+            }
+
+                .form .item:after {
+                    content: '';
+                    float: right;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    width: 10px;
+                    height: 10px;
+                    transform: rotate(225deg) translateY(-24px);
+                    border-top: 0px;
+                    border-right: 0px;
+                }
+
+
+        .item3 {
+            height: 100px;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+
+
+        .phone_control {
+            width: 70%;
+            border: 0px;
+            border-style: none;
+            outline-style: none;
+            height: 30px;
+            text-align: right;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .full_control {
+            border: 0px;
+            border-style: none;
+            outline-style: none;
+            width: 100%;
+            height: 100px;
+            padding: 5px 10px;
+            font-size: 14px;
+            /*margin: 3px;*/
+            color: #666;
+        }
+
+        .item_head {
+            width: 18%;
+            line-height: 50px;
+            display: inline-block;
+            text-align: right;
+            font-size: 14px;
+        }
+
+
+
+        .person {
+            background-color: #fff;
+            margin-top: 10px;
+        }
+
+        .person_title_text {
+            font-size: 16px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .person_title_desc {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .person_title {
+            border-bottom: 1px solid #eee;
+        }
+
+        .img_person {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .btn {
+            color: #fff;
+            background: rgba(96,199,146,1);
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0px;
+            position: fixed;
+            bottom: 0;
+            font-size: 18px;
+        }
+
+            .btn:active {
+                background: rgba(66,169,116,1);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="head">
+            <span class="icon_back"></span>
+            <span class="title">机票</span>
+            <i class="fa fa-list icon_more" aria-hidden="true">
+                <span class="icon_msg_num">33</span>
+            </i>
+        </div>
+
+        <div class="form">
+            <div class="item">
+                <span class="item_head">航班号</span>
+                <input type="text" class="phone_control" />
+                <i class="fa fa-chevron-right icon_right" aria-hidden="true"></i>
+            </div>
+
+            <div class="item">
+                <span class="item_head">到货时间</span>
+                <input type="text" readonly="readonly" unselectable="on" onfocus="this.blur()" class="phone_control date" placeholder="到货时间" />
+            </div>
+
+            <div class="item">
+                <div class="item_head">
+                    <span>航班时间</span>
+                </div>
+
+                <input type="text" class="phone_control datetime" placeholder="航班时间" readonly="readonly" />
+
+            </div>
+
+            <div class="item">
+                <span class="item_head">身份证号</span>
+                <input type="text" class="phone_control" placeholder="身份证号" />
+
+            </div>
+
+            <div class="item">
+                <span class="item_head">姓名</span>
+                <input type="text" class="phone_control" placeholder="姓名" />
+
+            </div>
+
+            <div class="item">
+                <span class="item_head">手机号码</span>
+                <input type="text" class="phone_control" placeholder="手机号码" />
+            </div>
+
+            <div class="item">
+                <span class="item_head">到货时间1</span>
+                <input type="text" readonly="readonly" unselectable="on" onfocus="this.blur()" class="phone_control date" placeholder="到货时间" />
+            </div>
+
+
+            <div class="item3">
+                <textarea rows="5" class="full_control" placeholder="航班号班(100字内)"></textarea>
+            </div>
+        </div>
+
+        <div class="person">
+            <div class="person_title">
+                <span class="person_title_text">审批人</span>
+                <span class="person_title_desc">(点击头像可以删除)</span>
+            </div>
+            <div class="person_select">
+                <img src="http://usercenter.zhongliko.com//headimage/dd38a5718a8e4e46882cb4cb8b5663b7.png" class="img_person" />
+            </div>
+        </div>
+
+
+        <div class="function">
+            <span class="btn">提交</span>
+        </div>
+
+        <div class="abc"></div>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener("touchstart", function () {
+            // do nothing
+        }, false);
+        //alert(1);
+
+        console.log(localStorage);
+
+
+        if (localStorage.getItem("key") == undefined) {
+            var r = Math.random();
+            localStorage.setItem("key", r);
+        }
+        $(".title").text("hui" + localStorage.getItem("key"));
+
+
+        $(".icon_back").click(function () {
+            var r = Math.random();
+            $(".title").text("hui" + r);
+        })
+
+        $(".datetime").click(function () {
+            var _this = this;
+            new DatePicker({
+                "type": 5,//0年, 1年月, 2月日, 3年月日
+                "title": '请选择日期',//标题(可选)
+                "maxYear": "",//最大年份（可选）
+                "minYear": "",//最小年份（可选）
+                "separator": "-",//分割符(可选)
+                "defaultValue": _this.value,//默认值（可选）
+                "callBack": function (val) {
+                    _this.value = val;
+                }
+            });
+        });
+
+
+        $(".date").click(function () {
+            var _this = this;
+            new DatePicker({
+                "type": 3,//0年, 1年月, 2月日, 3年月日
+                "title": '请选择日期',//标题(可选)
+                "maxYear": "",//最大年份（可选）
+                "minYear": "",//最小年份（可选）
+                "separator": "-",//分割符(可选)
+                "defaultValue": _this.value,//默认值（可选）
+                "callBack": function (val) {
+                    _this.value = val;
+                }
+            });
+        });
+
+
+
+        //localStorage.getItem("key");//获取名称为“key”的值
+
+        //localStorage.removeItem("key");//删除名称为“key”的信息。
+
+        //localStorage.clear();​//清空localStorage中所有信息
+
+    </script>
+
+    <script>
+        var endP = {
+            x: $('.icon_msg_num').offset().left,
+            y: $('.icon_msg_num').offset().top,
+        }
+
+        var submitBtn = document.querySelector('.btn')
+        submitBtn.addEventListener('click', function (e) {
+            animateTwoPoint({
+                x: e.pageX,
+                y: e.pageY
+            }, endP, function () {
+                var icon_msg_num = parseInt($(".icon_msg_num").text()) + 1;
+                $(".icon_msg_num").text(icon_msg_num);
+            })
+        })
+
+        //两点间的动画函数
+        function animateTwoPoint(startPoint, endPoint, fn_callback) {
+            var _body = document.body
+            var E = document.createElement('div')
+            var is_end = false
+
+            //加入元素与C3动画
+            E.style.cssText = 'width: 15px; height: 15px; background-color: rgb(23, 187, 103); border-radius: 50%;position: absolute;transition: left 1s ease-in, top 1s cubic-bezier(.26,.84,.51,.98), transform 1s ease-in'
+            E.style.left = (startPoint.x - 7.5) + 'px'
+            E.style.top = (startPoint.y - 7.5) + 'px'
+            _body.appendChild(E)
+
+            //改变元素的位置，自动触发C3动画
+            setTimeout(function () {
+                E.style.left = endPoint.x + 'px'
+                E.style.top = endPoint.y + 'px'
+                E.style.transform = 'scale(0.5)'
+            }, 20)
+
+            //监听动画完成，执行回调函数
+            E.addEventListener('webkitTransitionEnd', function () {
+                if (!is_end) {
+                    _body.removeChild(E)
+                    if (fn_callback) {
+                        fn_callback();
+                    }
+                    is_end = true
+                }
+            })
+        }
+    </script>
+
+    <script>
+        $(".person_select").click(function () {
+            window.location.href = "/H5/select_user.aspx";
+        })
+
+        $(".icon_msg_num").click(function () {
+            window.location.href = "/H5/list.aspx";
+        })
+
+        $("body").click(function (e) {
+            Round(e.clientX, e.clientY);
+        })
+
+       
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+
+    <script>
+        function Loading(obj) {
+            var id = "";
+
+
+
+
+            this.Show = function () {
+                //判断是否存在timestamp+3随机数
+            };
+
+            this.Hide = function (a_id) {
+                if (a_id == undefined) {
+                    $("#" + a_id).remove();
+
+                } else {
+                    $("#" + id).remove();
+                }
+
+            };
+        }
+
+        //调用代码
+        var json = {};
+        json.id = "abc";
+        json.backgroundColor = "#fff";//背景颜色(demo，类似于#fff)
+        json.isBackground = true;//是否显示背景(true)
+        json.littleBackgroundColor = "#fff";//小背景颜色(demo，类似于#fff)
+        json.R = "5px";//轨道颜色(demo,类似于#fff)10px
+        json.RColor == "#fff";//轨道半径:(r=5px)
+        json.RActiveColor == "#fff";//高亮颜色(demo,类似于#fff)
+        json.RTime = "2s";//旋转时间(2s)
+        json.text = "正在加载";//文字(不能超过4个字）
+
+        //json里面的内容可以没有任何东西，需要有控件默认值
+        var a = new Loading(json);
+        a.Show();
+        //a.Hide("abc1");//not
+        //a.Hide("abc");//OK
+        a.Hide();//OK
+
+        var b = new Loading();
+        b.Show(json);
+        b.Hide();//OK
+
+
+        function ShowLoading() {
+            var json = {};
+            json.id = "abc";
+            json.backgroundColor = "#fff";//背景颜色(demo，类似于#fff)
+            json.isBackground = true;//是否显示背景(true)
+            json.littleBackgroundColor = "#fff";//小背景颜色(demo，类似于#fff)
+            json.R = "5px";//轨道颜色(demo,类似于#fff)10px
+            json.RColor == "#fff";//轨道半径:(r=5px)
+            json.RActiveColor == "#fff";//高亮颜色(demo,类似于#fff)
+            json.RTime = "2s";//旋转时间(2s)
+            json.text = "正在加载";//文字(不能超过4个字）
+
+            //json里面的内容可以没有任何东西，需要有控件默认值
+            var a = new Loading(json);
+            a.Show();
+        }
+
+        //asdf
+        ShowLoading();
+
+        ///sadfsdf
+        HideLoading();
+
+        for (var i = 0; i < 100; i++) {
+            var json = {};
+            json.id = "id" + i;
+            var f = new Loading();
+            f.Show();
+            window.setTimeout(function () {
+                f.Hide();//OK
+                f.Hide(json.id);//OK
+
+            }, 100)
+            //线程暂时100毫秒
+        }
+
+
+
+
+
+        function ShowLoading() {
+            var a = new Loading();
+            a.Hide("abc");
+        }
+        HideLoading();
+
+
+        //css  多用
+        //js
+
+        //在屏幕的0.618(黄金分割点)
+        //依赖jq，尽量使用css3动画或者过度
+        //不依赖页面任何元素，父节点的class Loading，
+        //其他节点都是在他下面 .Loading .a
+        //隐藏后需要把元素删除、
+        //尽量简洁
+    </script>
+
+    <div class="Loading">
+
+
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <title></title>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <link href="../css/font-awesome4.7/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="js/work_follow.js"></script>
+   
+    <style>
+        input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #ccc !important;
+        }
+
+        input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #ccc !important;
+        }
+
+        input:-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #ccc !important;
+        }
+
+        input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ccc !important;
+        }
+
+        .icon_back {
+            float: left;
+            display: inline-block;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg) translateY(10px);
+            border-top: 0px;
+            border-right: 0px;
+        }
+
+        .icon_more {
+            float: right;
+            line-height: 30px;
+            position: relative;
+        }
+
+        .icon_msg_num {
+            background-color: red;
+            color: #fff;
+            position: absolute;
+            top: -5px;
+            right: -15px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            padding: 0px;
+            line-height: 20px;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        body, html {
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .head {
+            color: #fff;
+            background-color: rgba(96,199,146,1);
+            text-align: center;
+            padding: 15px 20px 0px 20px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .container {
+            background-color: #eee;
+        }
+
+        .form {
+            margin-top: 5px;
+            background-color: #fff;
+        }
+
+            .form .item {
+                height: 50px;
+                border-bottom: 1px solid #eee;
+            }
+
+                .form .item:after {
+                    content: '';
+                    float: right;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    width: 10px;
+                    height: 10px;
+                    transform: rotate(225deg) translateY(-24px);
+                    border-top: 0px;
+                    border-right: 0px;
+                }
+
+
+        .item3 {
+            height: 100px;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+
+
+        .phone_control {
+            width: 70%;
+            border: 0px;
+            border-style: none;
+            outline-style: none;
+            height: 30px;
+            text-align: right;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .full_control {
+            border: 0px;
+            border-style: none;
+            outline-style: none;
+            width: 100%;
+            height: 100px;
+            padding: 5px 10px;
+            font-size: 14px;
+            /*margin: 3px;*/
+            color: #666;
+        }
+
+
+        .item_head {
+            width: 18%;
+            line-height: 50px;
+            display: inline-block;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .person {
+            background-color: #fff;
+            margin-top: 10px;
+        }
+
+        .person_title_text {
+            font-size: 16px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .person_title_desc {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .person_title {
+            border-bottom: 1px solid #eee;
+        }
+
+        .img_person {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .btn {
+            color: #fff;
+            background: rgba(96,199,146,1);
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0px;
+            position: fixed;
+            bottom: 0;
+            font-size: 18px;
+        }
+
+            .btn:active {
+                background: rgba(66,169,116,1);
+            }
+    </style>
+
+    <style>
+        div {
+            margin: 0px;
+        }
+
+        .request_person {
+            position: relative;
+            font-size: 13px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            margin-top: 10px;
+            padding-left: 10px;
+        }
+
+        .head_image {
+            width: 50px;
+            height: 50px;
+            margin: 5px 5px;
+            border-radius: 50%;
+        }
+
+
+
+        .request_person .message {
+            display: inline-block;
+            position: absolute;
+            top: 12px;
+            padding-left: 10px;
+            /*width: calc(100% - 75px);*/
+        }
+
+        .request_person .name {
+            margin-bottom: 6px;
+        }
+
+        .c2 {
+            color: rgba(96,199,146,1);
+        }
+
+        .detail_message {
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .detail_message .item {
+                padding: 5px 5px;
+                font-size: 13px;
+            }
+
+            .detail_message .key {
+                color: #666;
+                margin: 10px;
+                display: inline-block;
+                min-width: 100px;
+            }
+
+            .detail_message .value {
+                color: #000;
+            }
+
+
+        .work_follow {
+            padding-bottom: 10px;
+        }
+
+            .work_follow .item {
+                background: #eee;
+            }
+
+            .work_follow .content {
+                margin-left: 20px;
+                padding-left: 20px;
+                border-left: 1px solid #ccc;
+                position: relative;
+                background: #eee;
+                /*display: inline-block;*/
+                height: 90px;
+                padding-top: 10px;
+            }
+
+            .work_follow .icon {
+                position: absolute;
+                top: 10px;
+                left: -10px;
+                font-size: 20px;
+                background: #eee;
+                transform: translateY(20px);
+            }
+
+            .work_follow .card {
+                background: #fff;
+                width: calc(100% - 10px);
+                height: 80px;
+                padding-top: 10px;
+                border-radius: 5px;
+            }
+
+                .work_follow .card:before {
+                    content: '';
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    background-color: #fff;
+                    transform: translateY(-35px) rotate(45deg) translateX(-7px);
+                }
+
+            .work_follow .time {
+                float: right;
+                color: #666;
+                font-size: 12px;
+                padding-right: 10px;
+            }
+
+            .work_follow .message, .work_follow .status {
+                font-size: 12px;
+            }
+
+            .work_follow .message {
+                margin: 8px 0px;
+                color: #666;
+            }
+
+            .work_follow .name {
+                font-size: 13px;
+            }
+
+
+            .work_follow .text {
+                display: inline-block;
+                width: calc(100% - 85px);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="head">
+            <span class="icon_back"></span>
+            <span class="title">审批详情</span>
+        </div>
+
+        <div class="request_person">
+            <img src="http://usercenter.zhongliko.com/headimage/39cdf7892c634303be57675aca994a30.png" class="head_image" />
+            <div class="message">
+                <div class="name">赵泽辉</div>
+                <div class="stauts c2">待审核</div>
+            </div>
+        </div>
+
+        <div class="detail_message">
+            <div class="item">
+                <span class="key">审批类型</span>
+                <span class="value">长假</span>
+            </div>
+
+            <div class="item">
+                <span class="key">审批类型</span>
+                <span class="value">长假</span>
+            </div>
+
+            <div class="item">
+                <span class="key">审批类型</span>
+                <span class="value">长假</span>
+            </div>
+
+            <div class="item">
+                <span class="key">审批类型</span>
+                <span class="value">长假</span>
+            </div>
+
+            <div class="item">
+                <span class="key">审批类型</span>
+                <span class="value">长假</span>
+            </div>
+
+
+        </div>
+
+        <div class="item3">
+            <textarea rows="5" class="full_control" placeholder="航班号班(100字内)"></textarea>
+        </div>
+
+        <div class="work_follow">
+            <div class="item">
+                <div class="content">
+                    <div class="card">
+                        <i class="fa fa-check-circle icon c2" aria-hidden="true"></i>
+                        <img src="http://usercenter.zhongliko.com/headimage/39cdf7892c634303be57675aca994a30.png" class="head_image" />
+                        <div class="text">
+                            <span class="name">赵泽辉</span>
+                            <span class="time">2019-12-12 12:12</span>
+                            <div class="message">审批意见</div>
+                            <div class="status c2">审批通过</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="content">
+                    <div class="card">
+                        <i class="fa fa-check-circle icon c2" aria-hidden="true"></i>
+
+                        <img src="http://usercenter.zhongliko.com/headimage/39cdf7892c634303be57675aca994a30.png" class="head_image" />
+                        <div class="text">
+                            <span class="name">赵泽辉</span>
+                            <span class="time">2019-12-12 12:12</span>
+                            <div class="message">审批意见</div>
+                            <div class="status c2">审批通过</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom_function">
+            <span class="b b2 btn_back">驳回</span>
+            <span class="b b1 btn_approve">同意</span>
+            <span class="b b0 btn_end_approve">终审</span>
+        </div>
+        <style>
+            .bottom_function {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                font-size: 0px;
+            }
+
+            .b {
+                color: #fff;
+                text-align: center;
+                width: 33.33%;
+                display: inline-block;
+                font-size: 18px;
+                padding: 10px 0px;
+            }
+
+            .b0 {
+                background-color: rgba(251,184,103,1);
+            }
+
+            .b1 {
+                background-color: rgba(96,199,146,1);
+            }
+
+            .b2 {
+                background-color: red;
+            }
+        </style>
+    </div>
+
+    <script>
+        ShowLoading("正在处理...");
+
+        window.setTimeout(function () {
+            HideLoading();
+        }, 3000)
+
+    </script>
+</body>
+
+</html>

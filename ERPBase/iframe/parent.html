@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #eee;
+      top: 0;
+      left: 100%;
+      transition: left .2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+<div>this is parent page</div>
+<div class="bx"></div>
+<button>click me</button>
+<iframe src="./children.html" frameborder="0"></iframe>
+
+<script>
+  let btn = document.querySelector('button');
+  let ifm = document.querySelector('iframe');
+  let bx = document.querySelector('.bx');
+  btn.addEventListener('click', function () {
+    ifmShow()
+  })
+  function ifmShow() {
+    ifm.style.left = 0
+  }
+  function ifmOut() {
+    ifm.style.left = '100%'
+  }
+  function message(a) {
+    bx.innerHTML = 'this is the value from the child page: ' + a
+  }
+</script>
+</body>
+</html>

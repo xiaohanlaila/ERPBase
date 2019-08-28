@@ -1,0 +1,342 @@
+﻿
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <title></title>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <link href="../css/font-awesome4.7/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/work_follow.css" rel="stylesheet" />
+    <style>
+        input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #ccc !important;
+        }
+
+        input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #ccc !important;
+        }
+
+        input:-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #ccc !important;
+        }
+
+        input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ccc !important;
+        }
+
+        .icon_back {
+            float: left;
+            display: inline-block;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg) translateY(10px);
+            border-top: 0px;
+            border-right: 0px;
+        }
+
+        .icon_more {
+            float: right;
+            line-height: 30px;
+            position: relative;
+        }
+
+        .icon_msg_num {
+            background-color: red;
+            color: #fff;
+            position: absolute;
+            top: -5px;
+            right: -15px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            padding: 0px;
+            line-height: 20px;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        body, html {
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .head {
+            color: #fff;
+            background-color: rgba(96,199,146,1);
+            text-align: center;
+            padding: 15px 20px 0px 20px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .container {
+            background-color: #fff;
+        }
+
+        .form {
+            margin-top: 5px;
+            background-color: #fff;
+        }
+
+        .item {
+            height: 50px;
+            border-bottom: 1px solid #eee;
+        }
+
+            .item:after {
+                content: '';
+                float: right;
+                display: inline-block;
+                border: 1px solid #ccc;
+                width: 10px;
+                height: 10px;
+                transform: rotate(225deg) translateY(-24px);
+                border-top: 0px;
+                border-right: 0px;
+            }
+
+
+        .item3 {
+            height: 100px;
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .phone_control {
+            width: 70%;
+            border: 0px;
+            border-style: none;
+            outline-style: none;
+            height: 30px;
+            text-align: right;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .full_control {
+            border: 0px;
+            border-style: none;
+            outline-style: none;
+            width: 95%;
+            padding: 5px 10px;
+            font-size: 14px;
+            margin: 3px;
+            color: #666;
+        }
+
+
+        .item_head {
+            width: 18%;
+            line-height: 50px;
+            display: inline-block;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .person {
+            background-color: #fff;
+            margin-top: 10px;
+        }
+
+        .person_title_text {
+            font-size: 16px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .person_title_desc {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .person_title {
+            border-bottom: 1px solid #eee;
+        }
+
+        .img_person {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .btn {
+            color: #fff;
+            background: rgba(96,199,146,1);
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0px;
+            position: fixed;
+            bottom: 0;
+            font-size: 18px;
+        }
+
+            .btn:active {
+                background: rgba(66,169,116,1);
+            }
+    </style>
+
+    <style>
+        .content {
+            background-color: #FFF;
+        }
+
+            .content .head_image {
+                width: 45px;
+                height: 45px;
+                margin: 5px 10px;
+                border-radius: 50%;
+            }
+
+        .item1 {
+            height: 50px;
+            border-bottom: 1px solid #eee;
+            padding: 5px 0px;
+            font-size: 12px;
+            position: relative;
+        }
+
+            .item1:active {
+                background-color: #eee;
+            }
+
+            .item1 .message {
+                display: inline-block;
+                position: absolute;
+                top: 12px;
+                width: calc(100% - 75px);
+            }
+
+            .item1 .name {
+                font-size: 13px;
+            }
+
+            .item1 .bottom {
+                color: #666;
+            }
+
+
+        .message .top {
+            margin-bottom: 6px;
+        }
+
+
+        .item1 .stauts {
+            float: right;
+        }
+
+        .c0 {
+            color: yellow;
+        }
+
+        .c1 {
+            color: mediumpurple;
+        }
+
+        .c2 {
+            color: rgba(96,199,146,1);
+        }
+
+        .c3 {
+            color: red;
+        }
+
+        .c5 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="head">
+            <span class="icon_back"></span>
+            <span class="title">机票列表</span>
+        </div>
+
+        <div class="content">
+            <div class="item1 WaterWave">
+                <img src="http://usercenter.zhongliko.com/headimage/39cdf7892c634303be57675aca994a30.png" class="head_image" />
+                <div class="message">
+                    <div class="top">
+                        <span class="name">赵泽辉外勤</span>
+                        <span class="stauts c2">待审核</span>
+                    </div>
+
+                    <div class="bottom">2018-09-09 12:45</div>
+                </div>
+
+            </div>
+
+            <div class="item1">
+                <img src="http://usercenter.zhongliko.com/headimage/39cdf7892c634303be57675aca994a30.png" class="head_image" />
+                <div class="message">
+                    <div class="top">
+                        <span class="name">赵泽辉外勤</span>
+                        <span class="stauts c2">待审核</span>
+                    </div>
+
+                    <div class="bottom">2018-09-09 12:45</div>
+                </div>
+
+            </div>
+
+            <div class="item1">
+                <img src="http://usercenter.zhongliko.com/headimage/39cdf7892c634303be57675aca994a30.png" class="head_image" />
+                <div class="message">
+                    <div class="top">
+                        <span class="name">赵泽辉外勤</span>
+                        <span class="stauts c2">待审核</span>
+                    </div>
+
+                    <div class="bottom">2018-09-09 12:45</div>
+                </div>
+
+            </div>
+
+            <div class="item1">
+                <img src="http://usercenter.zhongliko.com/headimage/39cdf7892c634303be57675aca994a30.png" class="head_image" />
+                <div class="message">
+                    <div class="top">
+                        <span class="name">赵泽辉外勤</span>
+                        <span class="stauts c2">待审核</span>
+                    </div>
+
+                    <div class="bottom">2018-09-09 12:45</div>
+                </div>
+
+            </div>
+
+            <div class="item1">
+                <img src="http://usercenter.zhongliko.com/headimage/39cdf7892c634303be57675aca994a30.png" class="head_image" />
+                <div class="message">
+                    <div class="top">
+                        <span class="name">赵泽辉外勤</span>
+                        <span class="stauts c2">待审核</span>
+                    </div>
+
+                    <div class="bottom">2018-09-09 12:45</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        //$(".item1").click(function () {
+        //    window.location.href = "/H5/detail.aspx";
+        //});
+
+        $(".Iback").click(function () {
+            window.parent.list_hide()
+        });
+
+    </script>
+</body>
+</html>

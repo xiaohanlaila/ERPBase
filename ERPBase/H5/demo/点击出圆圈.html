@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <style>
+        div {
+            height: 100px;
+        }
+
+        .abc {
+            position: fixed;
+            height: 50px;
+            width: 50px;
+            top: 100px;
+            left: 100px;
+            border-radius: 50%;
+            background-color: #000;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">abc</div>
+
+    <div class="abc"></div>
+
+
+    <script>
+        $("div").click(function () {
+            console.log(1);
+        })
+
+    </script>
+</body>
+</html>

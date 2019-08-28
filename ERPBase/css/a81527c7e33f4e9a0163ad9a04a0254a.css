@@ -1,0 +1,887 @@
+
+/*~/css/maintenance.css begin*/
+/*公共区*/
+body, html {
+    padding: 0px;
+    margin: 5px;
+    font-family: "Microsoft Yahei";
+}
+
+input, select，button, textarea, span, div {
+    outline: none;
+    box-sizing: border-box;
+}
+
+button:focus {
+    outline: none;
+}
+
+.SogRight {
+    display: inline-block;
+    float: right;
+}
+
+.SOGWarming {
+    color: #E4393C !important;
+    border: 1px solid #FFBDBE !important;
+    background-color: #FFEBEB !important;
+}
+
+.hide {
+    display: none;
+}
+
+.tips {
+    position: fixed;
+    height: 40px;
+    background: rgba(100,100,100,1);
+    border-radius: 5px;
+    line-height: 40px;
+    color: #fff;
+    padding: 0px 10px;
+    z-index: 30;
+    font-size: 12px;
+}
+
+    .tips:before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: rgba(100,100,100,1);
+        transform: translateY(-5px) rotate(45deg);
+        left: -5px;
+        top: 50%;
+    }
+
+
+/*按钮区*/
+.add_botton {
+    color: #fff;
+    height: 25px;
+    width: 25px;
+    font-size: 18px;
+    text-align: center;
+    display: inline-block;
+    background-color: #3BB9EF;
+    font-weight: bold;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.5s,box-shadow ease-in-out 0.5s;
+}
+
+    .add_botton:hover {
+        background-color: #0d82ae;
+    }
+
+.btn {
+    color: #fff;
+    font-weight: 400;
+    border: 1px solid transparent;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    padding: 3px 12px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.green_btn {
+    background-color: #56c32a;
+}
+
+    .green_btn:hover {
+        background-color: #439921;
+    }
+
+.SogControl {
+    width: 400px;
+    height: 36px;
+    padding: 5px 12px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    border-radius: 2px;
+    font-size: 14px;
+    color: #555;
+}
+
+    .SogControl:active, .SogControl:hover, SogControl:focus {
+        border-color: #10a6de;
+    }
+
+
+
+/*头部区域*/
+.SogHead {
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 10px;
+}
+
+.SogTitle {
+    font-size: 20px;
+    padding: 5px;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+/*导航*/
+.SogNavigate {
+    display: inline-block;
+    font-size: 0px;
+}
+
+    .SogNavigate a {
+        padding: 5px 15px;
+        border: 1px solid #cccccc;
+        border-left: 0px;
+        font-size: 12px;
+    }
+
+        .SogNavigate a:first-child, .SogNavigate span:first-child {
+            border: 1px solid #ccc;
+        }
+
+    .SogNavigate a {
+        cursor: pointer;
+        color: #0f83b5;
+        background: #ffffff;
+        transition: background-color ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+    }
+
+        .SogNavigate a:hover {
+            background-color: #eee;
+        }
+
+        .SogNavigate a.active {
+            background: #3BB9EF;
+            color: #ffffff;
+            transition: background-color ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+        }
+
+/*条件区域*/
+.SogCondition {
+    width: 100%;
+    max-width: 100%;
+}
+
+.condition_item {
+    border: 1px solid #ddd;
+    padding: 0px;
+    border-bottom: 0px;
+}
+
+    .condition_item:last-child {
+        border-bottom: 1px solid #ccc;
+    }
+
+.condition_head {
+    display: inline-block;
+    color: #333;
+    font-size: 12px;
+    margin-right: 10px;
+    margin-left: 11px;
+    font-weight: bold;
+    width: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.condition_item a {
+    padding: 6px;
+    font-size: 12px;
+    margin: 7px 5px;
+    display: inline-block;
+}
+
+.condition_item a {
+    color: #333;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+}
+
+    .condition_item a:hover {
+        background-color: #eee;
+    }
+
+    .condition_item a.active {
+        color: #FFF;
+        background-color: #3BB9EF;
+        transition: background-color ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+    }
+
+.close {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    font-size: 0px;
+}
+
+.condition_desc {
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 2px;
+    background-color: #3BB9EF;
+}
+
+    .condition_desc span {
+        display: inline-block;
+        font-size: 12px;
+        color: #fff;
+        padding: 5px;
+    }
+
+.SogCondition .open {
+    background: #FBFCFD;
+}
+
+.SogCondition .close {
+    background: #FBFCFD;
+}
+
+
+.SogCondition .handler {
+    text-align: center;
+    font-size: 0px;
+}
+
+.small_btn {
+    display: inline-block;
+    width: 33px;
+    height: 17px;
+    cursor: pointer;
+    background-color: #3bb9ef;
+    color: #fff;
+    background-color: #3bb9ef;
+    font-size: 14px;
+    padding-top: 3px;
+    transition: background-color ease-in-out 0.5s,box-shadow ease-in-out 0.5s;
+}
+
+    .small_btn:hover {
+        background-color: #0d82ae;
+    }
+
+
+
+/*文本搜索区*/
+.SogTextSearch {
+    font-size: 0px;
+    margin: 8px 0px;
+}
+
+    .SogTextSearch span {
+        background: #3BB9EF;
+        font-size: 14px;
+        padding: 0px 15px;
+        color: #ffffff;
+        display: inline-block;
+        height: 34px;
+        text-align: center;
+        line-height: 34px;
+        vertical-align: top;
+        border: none;
+        cursor: pointer;
+        transition: background-color ease-in-out 0.5s,box-shadow ease-in-out 0.5s;
+    }
+
+        .SogTextSearch span:hover {
+            background-color: #0d82ae;
+        }
+
+    .SogTextSearch input {
+        height: 34px;
+        border: 1px solid #ddd;
+        font-size: 12px;
+        padding: 3px 12px;
+        margin: 0px;
+        width: 220px;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        vertical-align: top;
+    }
+
+        .SogTextSearch input:active, .SogTextSearch input:focus, .SogTextSearch input:hover {
+            border-color: #3BB9EF;
+        }
+
+    .SogTextSearch i {
+        margin-right: 5px;
+    }
+
+
+
+/*功能区域*/
+.SogFunction {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+    .SogFunction .number {
+        color: #3BB9EF;
+        padding: 0 5px;
+    }
+
+
+/*表格区域*/
+.SogTable {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+    .SogTable tr:nth-child(odd) {
+        background-color: #F6FBFD;
+    }
+
+    .SogTable tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+
+    .SogTable tr:hover {
+        background-color: rgba(218,242,252,1);
+    }
+
+    .SogTable th, .SogTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-size: 12px;
+        font-family: "Microsoft Yahei";
+        text-align: left;
+    }
+
+.SogTdCheck {
+    width: 20px;
+}
+
+text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.valign-middle {
+    vertical-align: middle !important;
+}
+
+.width-chk {
+    width: 40px;
+}
+
+.width-xxs {
+    width: 30px;
+}
+
+.width-xs {
+    width: 60px;
+}
+
+.width-sm {
+    width: 80px;
+}
+
+.width-date {
+    width: 100px;
+}
+
+.width-datetime {
+    width: 140px;
+}
+
+.width-md {
+    width: 130px;
+}
+
+.width-lg {
+    width: 210px;
+}
+
+.width-xl {
+    width: 260px;
+}
+
+.width-xlg {
+    width: 320px;
+}
+
+.width-xxl {
+    width: 510px;
+}
+
+
+
+/*分页区域*/
+.SogPages {
+    font-size: 0px;
+    text-align: right;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-top: 0px;
+}
+
+    .SogPages a {
+        width: 31px;
+        height: 26px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-left: 0px;
+        text-align: center;
+        padding: 5px 0px 0px 0px;
+        display: inline-block;
+        transition: background-color ease-in-out 0.5s,box-shadow ease-in-out 0.5s;
+    }
+
+        .SogPages a:first-child {
+            border: 1px solid #ccc;
+        }
+
+    .SogPages a {
+        cursor: pointer;
+        color: #0f83b5;
+        background: #ffffff;
+    }
+
+        .SogPages a:hover {
+            background-color: #eee;
+        }
+
+        .SogPages a.active {
+            display: inline-block;
+            background: #3BB9EF;
+            color: #ffffff;
+        }
+
+.td1 {
+    width: 15px;
+}
+
+.td2 {
+    width: 30px;
+}
+
+.td3 {
+    width: 45px;
+}
+
+.td4 {
+    width: 60px;
+}
+
+
+
+
+/*弹出层*/
+.SogModal {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -700px;
+    z-index: 10;
+    width: 600px;
+    display: none;
+}
+
+    .SogModal .modal_title {
+        height: 40px;
+        line-height: 40px;
+        color: rgb(255, 255, 255);
+        background: rgb(59, 185, 239);
+        text-align: center;
+        border-radius: 6px 6px 0px 0px;
+        position: relative;
+        font-weight: bold;
+        cursor: move;
+    }
+
+.modal_item {
+    padding: 7px 0px;
+}
+
+.modal_item_title {
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.modal_item_content {
+    width: 400px;
+    display: inline-block;
+}
+
+.modal_content {
+    background-color: #fff;
+    max-height: 600px;
+    overflow-y: auto;
+    min-height: 300px;
+}
+
+.modal_function {
+    height: 50px;
+    text-align: center;
+    border-top: 1px solid #b7e5f9;
+    padding-top: 10px;
+    background-color: #fff;
+    border-radius: 0px 0px 6px 6px;
+}
+
+.btn_full {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    background-color: rgb(59, 185, 239);
+    border: 1px solid rgb(59, 185, 239);
+    color: #fff;
+    line-height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+    .btn_full:hover {
+        background-color: #0d82ae;
+    }
+
+.btn_empty {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid rgb(59, 185, 239);
+    color: rgb(59, 185, 239);
+    line-height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+    .btn_empty:hover {
+        background-color: #eee;
+    }
+
+
+.modal_title i {
+    padding: 10px 10px 0px 0px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/*图片文件预览 开始*/
+.item_tips {
+    position: fixed;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #fff;
+    padding: 8px;
+    border: #ccc solid 1px;
+}
+
+.down_tips:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    left: 50%;
+    border-bottom: #ccc solid 1px;
+    border-right: #ccc solid 1px;
+    top: 100%;
+    transform: translateY(-5px) rotate(45deg);
+}
+
+.up_tips:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    display: inline-block;
+    left: 50%;
+    border-top: #ccc solid 1px;
+    border-left: #ccc solid 1px;
+    transform: translateY(-15px) rotate(45deg);
+}
+
+.left_tips:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-5px) rotate(45deg);
+    left: -5px;
+    border-bottom: #ccc solid 1px;
+    border-left: #ccc solid 1px;
+}
+
+.right_tips:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-5px) rotate(45deg);
+    right: -5px;
+    border-top: #ccc solid 1px;
+    border-right: #ccc solid 1px;
+}
+
+.tips1:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    display: inline-block;
+}
+
+/*图片文件预览 结束*/
+
+/*~/css/maintenance.css end*/
+
+/*~/css/jquery.toast.css begin*/
+/**
+ * jQuery toast plugin created by Kamran Ahmed copyright MIT license 2014
+ */
+.jq-toast-wrap { display: block; position: fixed; width: 250px;  pointer-events: none !important; margin: 0; padding: 0; letter-spacing: normal; z-index: 9000 !important; }
+.jq-toast-wrap * { margin: 0; padding: 0; }
+
+.jq-toast-wrap.bottom-left { bottom: 20px; left: 20px; }
+.jq-toast-wrap.bottom-right { bottom: 20px; right: 40px; }
+.jq-toast-wrap.top-left { top: 20px; left: 20px; }
+.jq-toast-wrap.top-right { top: 20px; right: 40px; }
+
+.jq-toast-single { display: block; width: 100%; padding: 10px; margin: 0px 0px 5px; border-radius: 4px; font-size: 12px; font-family: arial, sans-serif; line-height: 17px; position: relative;  pointer-events: all !important; background-color: #444444; color: white; }
+
+.jq-toast-single h2 { font-family: arial, sans-serif; font-size: 14px; margin: 0px 0px 7px!important; background: none; color: inherit; line-height: inherit; letter-spacing: normal; }
+.jq-toast-single a { color: #eee; text-decoration: none; font-weight: bold; border-bottom: 1px solid white; padding-bottom: 3px; font-size: 12px; }
+
+.jq-toast-single ul { margin: 0px 0px 0px 15px; background: none; padding:0px; }
+.jq-toast-single ul li { list-style-type: disc !important; line-height: 17px; background: none; margin: 0; padding: 0; letter-spacing: normal; }
+
+.close-jq-toast-single { position: absolute; top: 3px; right: 7px; font-size: 14px; cursor: pointer; }
+
+.jq-toast-loader { display: block; position: absolute; top: -2px; height: 5px; width: 0%; left: 0; border-radius: 5px; background: red; }
+.jq-toast-loaded { width: 100%; }
+.jq-has-icon { padding: 10px 10px 10px 50px; background-repeat: no-repeat; background-position: 10px; }
+.jq-icon-info { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII='); background-color: #31708f; color: #d9edf7; border-color: #bce8f1; }
+.jq-icon-warning { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII='); background-color: #8a6d3b; color: #fcf8e3; border-color: #faebcc; }
+.jq-icon-error { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII='); background-color: #a94442; color: #f2dede; border-color: #ebccd1; }
+.jq-icon-success { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg=='); color: #dff0d8; background-color: #3c763d; border-color: #d6e9c6; }
+/*~/css/jquery.toast.css end*/
+
+/*~/css/SogFileUpload.css begin*/
+/*文件样式*/
+.SogFileUpload {
+    font-size: 14px;
+    color: #666;
+    border: 1px solid #ccc;
+    width: 400px;
+    height: 36px;
+    padding: 5px 12px;
+    vertical-align: middle;
+}
+
+/*图标按钮*/
+.file_icon, .folder_icon {
+    color: #3bb9ef;
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 20px;
+    float: left;
+}
+    .file_icon:hover, .folder_icon:hover {
+        color: #0d82ae;
+    }
+
+
+/*文件或者文件夹路径*/
+.file_url, .down_file, .folder_url, .view_folder {
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    cursor: pointer;
+}
+    .file_url:hover {
+        display: inline-block;
+        text-decoration: none;
+        color: #3bb9ef;
+    }
+    .file_url:link {
+        color: #3bb9ef;
+    }
+
+/*文件上传时显示百分比*/
+.file_precent {
+    float: right;
+    background-color: red;
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    color: #fff;
+    padding-top: 2px;
+    text-align: center;
+    font-weight: 400;
+}
+
+/*清除文件或者文件夹的按钮*/
+.file_clear, .folder_clear {
+    float: right;
+    font-size: 15px;
+    cursor: pointer;
+    /*margin-right: 20px;*/
+    padding: 5px;
+}
+    .file_clear:hover, .folder_clear:hover {
+        background-color: #eee;
+    }
+
+/*~/css/SogFileUpload.css end*/
+
+/*~/css/SogFolderUpload.css begin*/
+
+/*上传时弹出框的跟节点*/
+.file_progress {
+    border: 1px solid #ccc;
+    position: fixed;
+    bottom: -700px;
+    right: 0px;
+    background-color: #fff;
+    width: 500px;
+    border-radius: 5px 5px 0px 0px;
+    transition: bottom 0.5s;
+    z-index: 20;
+}
+
+/*上传盒子头部*/
+.progress_title {
+    border-bottom: 1px solid #ccc;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+/*关闭按钮*/
+.progress_close {
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0px;
+    color: #444;
+    padding: 10px;
+}
+
+    .progress_close:hover {
+        background-color: #eee;
+    }
+
+/*头部文字*/
+.progress_text {
+    color: #333;
+    font-size: 14px;
+    padding: 0px 10px;
+}
+
+/*.progress_line_o {
+    width: 130px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.progress_line_o_total {
+    width: 325px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.progress_line_f {
+    background-color: #3bb9ef;
+    width: 66%;
+    height: 10px;
+    border-radius: 5px;
+}*/
+
+/*上传盒子内容*/
+.progress_content {
+    min-height: 300px;
+    max-height: 600px;
+    overflow: auto;
+}
+
+/*每一个文件项*/
+.progress_item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+}
+
+    .progress_item:hover {
+        background-color: #FFFAFA;
+    }
+
+    .progress_item:active {
+        background-color: #ccc;
+    }
+
+/*文件图标*/
+.progress_icon {
+    font-size: 18px;
+    padding: 0px 5px;
+}
+
+/*文件名*/
+.progress_filename {
+    width: 220px;
+    display: inline-block;
+    overflow: hidden;
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+/*文件大小*/
+.progress_size {
+    font-size: 12px;
+}
+
+/*文件删除图标*/
+.file_delete_icon {
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0px;
+    color: #444;
+    padding-top: 2px;
+}
+
+    .file_delete_icon:hover {
+        color: red;
+    }
+
+/*~/css/SogFolderUpload.css end*/

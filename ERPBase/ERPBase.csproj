@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1807851D-1C3E-4048-87FE-3E3E243DC1E7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERPBase</RootNamespace>
+    <AssemblyName>ERPBase</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Password_Encrypt_ASC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Password_Encrypt_ASC.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\easyui.css" />
+    <Content Include="css\font-awesome4.7\css\font-awesome.min.css" />
+    <Content Include="css\font-awesome4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="css\IndexNew.css" />
+    <Content Include="css\jquery.toast.css" />
+    <Content Include="css\maintenance.css" />
+    <Content Include="css\SogFileUpload.css" />
+    <Content Include="css\SogFolderUpload.css" />
+    <Content Include="css\SogModal.css" />
+    <Content Include="css\zane-calendar.css" />
+    <Content Include="demo\datetime_test\css\zane-calendar.css" />
+    <Content Include="demo\datetime_test\demo.html" />
+    <Content Include="demo\datetime_test\index.html" />
+    <Content Include="demo\datetime_test\js\zane-calendar.js" />
+    <Content Include="demo\demo4.aspx" />
+    <Content Include="demo\demo5.aspx" />
+    <Content Include="demo\HtmlPage1.html" />
+    <Content Include="demo\HtmlPage2.html" />
+    <Content Include="demo\HtmlPage3.html" />
+    <Content Include="demo\可搜索下拉.html" />
+    <Content Include="demo\百分比控件.html" />
+    <Content Include="dll\Newtonsoft.Json.dll" />
+    <Content Include="dll\Password_Encrypt_ASC.dll" />
+    <Content Include="H5\demo\add.html" />
+    <Content Include="H5\css\font-awesome4.7\css\font-awesome.min.css" />
+    <Content Include="H5\css\font-awesome4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="H5\css\pick.css" />
+    <Content Include="H5\css\work_follow.css" />
+    <Content Include="H5\demo\detail.html" />
+    <Content Include="H5\demo\HtmlPage1.html" />
+    <Content Include="H5\demo\Icon.html" />
+    <Content Include="H5\demo\imageview\1.jpg" />
+    <Content Include="H5\demo\imageview\2.jpg" />
+    <Content Include="H5\demo\imageview\3.jpg" />
+    <Content Include="H5\demo\imageview\4.jpg" />
+    <Content Include="H5\demo\imageview\5.jpg" />
+    <Content Include="H5\demo\imageview\6.jpg" />
+    <Content Include="H5\demo\imageview\61.jpg" />
+    <Content Include="H5\demo\imageview\62.jpg" />
+    <Content Include="H5\demo\imageview\63.jpg" />
+    <Content Include="H5\demo\imageview\7.jpg" />
+    <Content Include="H5\demo\imageview\81.jpg" />
+    <Content Include="H5\demo\imageview\82.jpg" />
+    <Content Include="H5\demo\imageview\9.jpg" />
+    <Content Include="H5\demo\imageview\HtmlPage1.html" />
+    <Content Include="H5\demo\imageview\imageview.html" />
+    <Content Include="H5\demo\loading.html" />
+    <Content Include="H5\demo\loading\demo.html" />
+    <Content Include="H5\demo\loading\loading.js" />
+    <Content Include="H5\demo\点击出圆圈.html" />
+    <Content Include="H5\image\1.jpg" />
+    <Content Include="H5\image\2.jpg" />
+    <Content Include="H5\image\3.jpg" />
+    <Content Include="H5\image\4.jpg" />
+    <Content Include="H5\image\5.jpg" />
+    <Content Include="H5\image\6.jpg" />
+    <Content Include="H5\image\61.jpg" />
+    <Content Include="H5\image\62.jpg" />
+    <Content Include="H5\image\63.jpg" />
+    <Content Include="H5\image\7.jpg" />
+    <Content Include="H5\image\81.jpg" />
+    <Content Include="H5\image\82.jpg" />
+    <Content Include="H5\image\9.jpg" />
+    <Content Include="H5\image\add.jpg" />
+    <Content Include="H5\demo\index.html" />
+    <Content Include="H5\js\datepicker2.js" />
+    <Content Include="H5\js\jquery-1.11.0.min.js" />
+    <Content Include="H5\js\work_follow.js" />
+    <Content Include="H5\demo\list.html" />
+    <Content Include="H5\select_user.aspx" />
+    <Content Include="H5\sms\WebForm1.aspx" />
+    <Content Include="H5\work_follow\add.aspx" />
+    <Content Include="H5\work_follow\ajax.aspx" />
+    <Content Include="H5\work_follow\approve.aspx" />
+    <Content Include="H5\work_follow\detail.aspx" />
+    <Content Include="H5\work_follow\Error.aspx" />
+    <Content Include="H5\work_follow\help.aspx" />
+    <Content Include="H5\work_follow\list.aspx" />
+    <Content Include="H5\work_follow\notice.aspx" />
+    <Content Include="H5\work_follow\SP_APPROVE.aspx" />
+    <Content Include="H5\work_follow\SP_BUY.aspx" />
+    <Content Include="H5\work_follow\SP_TICKET.aspx" />
+    <Content Include="H5\demo\水波纹.html" />
+    <Content Include="iframe\children.html" />
+    <Content Include="iframe\parent.html" />
+    <Content Include="js\common.js" />
+    <Content Include="js\SogFileUpload.js" />
+    <Content Include="js\SogFolderUpload.js" />
+    <Content Include="js\zane-calendar.js" />
+    <Content Include="sys\AjaxData.aspx" />
+    <Content Include="demo\demo1.aspx" />
+    <Content Include="demo\demo2.aspx" />
+    <Content Include="demo\demo3.aspx" />
+    <Content Include="erp思路.txt" />
+    <Content Include="Index.aspx" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\jquery.easyui.min.js" />
+    <Content Include="js\jquery.slimscroll.js" />
+    <Content Include="js\jquery.toast.js" />
+    <Content Include="js\maintenance.js" />
+    <Content Include="js\SogModal.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="sys\File.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="data\AP_FUNCTION.cs" />
+    <Compile Include="data\AP_FUNCTION_GROUP.cs" />
+    <Compile Include="data\ERPBaseContext.cs" />
+    <Compile Include="data\SP_SMS.cs" />
+    <Compile Include="data\SP_WORK_FOLLOW.cs" />
+    <Compile Include="data\SYS_COLUMNS.cs" />
+    <Compile Include="data\SYS_FILE.cs" />
+    <Compile Include="data\SYS_FOLDER.cs" />
+    <Compile Include="data\SYS_OBJECTS.cs" />
+    <Compile Include="data\SYS_TABLE_BUTTONS.cs" />
+    <Compile Include="demo\demo4.aspx.cs">
+      <DependentUpon>demo4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demo\demo4.aspx.designer.cs">
+      <DependentUpon>demo4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="demo\demo5.aspx.cs">
+      <DependentUpon>demo5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demo\demo5.aspx.designer.cs">
+      <DependentUpon>demo5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\Cookies.cs" />
+    <Compile Include="H5\H5BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\H5Columns.cs" />
+    <Compile Include="H5\H5Control.cs" />
+    <Compile Include="H5\H5Objects.cs" />
+    <Compile Include="H5\select_user.aspx.cs">
+      <DependentUpon>select_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\select_user.aspx.designer.cs">
+      <DependentUpon>select_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\sms\SMS.cs" />
+    <Compile Include="H5\sms\SmsSender.cs" />
+    <Compile Include="H5\sms\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\sms\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\ajax.aspx.cs">
+      <DependentUpon>ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\ajax.aspx.designer.cs">
+      <DependentUpon>ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\approve.aspx.cs">
+      <DependentUpon>approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\approve.aspx.designer.cs">
+      <DependentUpon>approve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\detail.aspx.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\detail.aspx.designer.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\GData.cs" />
+    <Compile Include="H5\work_follow\help.aspx.cs">
+      <DependentUpon>help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\help.aspx.designer.cs">
+      <DependentUpon>help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\list.aspx.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\list.aspx.designer.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\notice.aspx.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\notice.aspx.designer.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\SP_APPROVE.aspx.cs">
+      <DependentUpon>SP_APPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\SP_APPROVE.aspx.designer.cs">
+      <DependentUpon>SP_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\SP_BUY.aspx.cs">
+      <DependentUpon>SP_BUY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\SP_BUY.aspx.designer.cs">
+      <DependentUpon>SP_BUY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="H5\work_follow\SP_TICKET.aspx.cs">
+      <DependentUpon>SP_TICKET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="H5\work_follow\SP_TICKET.aspx.designer.cs">
+      <DependentUpon>SP_TICKET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sys\AjaxBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sys\AjaxData.aspx.cs">
+      <DependentUpon>AjaxData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sys\AjaxData.aspx.designer.cs">
+      <DependentUpon>AjaxData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sys\AjaxResult.cs" />
+    <Compile Include="sys\AjaxSmartBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sys\comm_fun.cs" />
+    <Compile Include="sys\Control\SogAjaxControl.cs" />
+    <Compile Include="sys\Control\SogWebControl.cs" />
+    <Compile Include="sys\File.aspx.cs">
+      <DependentUpon>File.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sys\File.aspx.designer.cs">
+      <DependentUpon>File.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sys\maintenance1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sys\Control\SOGGenericControl.cs" />
+    <Compile Include="demo\demo1.aspx.cs">
+      <DependentUpon>demo1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demo\demo1.aspx.designer.cs">
+      <DependentUpon>demo1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="demo\demo2.aspx.cs">
+      <DependentUpon>demo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demo\demo2.aspx.designer.cs">
+      <DependentUpon>demo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="demo\demo3.aspx.cs">
+      <DependentUpon>demo3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demo\demo3.aspx.designer.cs">
+      <DependentUpon>demo3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sys\GSYS.cs" />
+    <Compile Include="sys\maintenance.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sys\maintenance2.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sys\MyExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\font-awesome4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\font-awesome4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\font-awesome4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\font-awesome4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="css\font-awesome4.7\fonts\FontAwesome.otf" />
+    <Content Include="packages.config" />
+    <Content Include="H5\css\font-awesome4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="H5\css\font-awesome4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="H5\css\font-awesome4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="H5\css\font-awesome4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="H5\css\font-awesome4.7\fonts\FontAwesome.otf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\images\" />
+    <Folder Include="image\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7802</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7802/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

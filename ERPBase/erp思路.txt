@@ -1,0 +1,42 @@
+后台技术：webform（C#）+ado.net+3.5  配表使用对象化，可以在具体页面进行就配置
+前端技术：jq，font-awesome，css，html
+
+后端对配表生成的sql需要进行缓存
+
+
+按钮
+每个按钮都使用span 实现
+1形状css  圆角，padding margin font border
+2icon的css  一种字体icon
+3颜色的css 背景颜色，字体颜色，active hover 
+
+页面事件：Search 搜索，页面禁止viewstate进行开发， rule正则表达式 rule_desc正则表达式提示 ，target 字段，placeholder 提示,data_id 逻辑主键id
+业务提交就是ajax，ShowLoading 显示正在加载，HideLoading 关闭正在加载，SuccessBox 成功提示，ErrorBox错误提示
+Ajax需要封装不允许使用jq的原生，action,function_code 必须在url里面，后端所有的ajax都允许跨域调用
+
+权限验证：1cookies，2token。登录成功后返回cookies与token，token可以配置有效时间，客户端需要一定时间重新登录
+
+文件全部由一个表进行保存，业务数据只是保存fileID，保存时全部使用guid文件名
+	
+
+按钮权限问题 ：新增，修改，删除，是否可以自定义列表，是否显示开发按钮，可以控制显示与隐藏
+
+
+页面分布
+头部 导航控件，后台生成html，点击后出发搜索 ，新增按钮封装成控件
+
+条件 数据条件控件，点击出发搜索，文本搜索控件支持任意移动
+
+功能  存在按钮控件
+
+列表 ajax 请求后台生成html，直接放在列表里面，包括分页控件
+       列可以增加按钮，并且加入数据主键，列表页面可以配置勾选是否显示列(页面返回一样，设置后直接通过js加入hide然后再加载显示，字段保留在浏览器中)
+
+分页：与列表控件一起封装
+
+弹出层 ：一开通过后台生成，点击显示弹出，保存后出发搜索事件Search
+
+通过页面可以初始化：数据表，配合表，功能表功能code自动增加 配表与功能表一样，代码aspx文件（包含就能运行），加入权限配置就能显示给客户
+
+页面控件：按钮，输入框，时间，数字，可搜索下拉，可搜索下拉多选，下拉 
+

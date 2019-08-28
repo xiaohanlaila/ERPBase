@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        .tips1 {
+            position: fixed;
+            /*height: 40px;*/
+            width: 300px;
+            background: #fff;
+            border-radius: 5px;
+            /*line-height: 40px;*/
+            color: #fff;
+            padding: 7.5px;
+            /*font-size: 12px;*/
+            top: 200px;
+            left: 200px;
+            border: #ccc solid 1px;
+        }
+
+            .tips1:before {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: #fff;
+                transform: translateY(-5px) rotate(45deg);
+                left: -5px;
+                top: 50%;
+                border-bottom: #ccc solid 1px;
+                border-left: #ccc solid 1px;
+            }
+
+        .s {
+            /*width: 10px;
+            height: 10px;*/
+            background-color: red;
+            display: inline-block;
+        }
+
+
+
+        .p {
+            /*position:relative;*/
+            background-color: green;
+        }
+
+        gg .s1 {
+            float: right;
+            margin-right: 50%;
+        }
+
+        .s2 {
+            float: left;
+        }
+    </style>
+    <script>
+        //function a(a, b) {
+        //    //var A = arguments[0];
+        //    //var A = arguments[1];
+        //    //for (var i = 0; i < arguments.length; i++)
+        //    //{
+
+        //    //}
+        //    //var arr = [];
+        //    //foreach(var i in )
+
+        //    console.log(this);
+        //    return this;
+        //}
+
+
+        //var obj = {
+        //    a: 1
+        //}
+        //a.call(false);
+
+        //new Date()
+
+        //a.call_hd(1);
+        //a(1, 2)
+        //var arr = [1, 2, 3]
+
+
+
+        //arr.forEach(function(val, ind) {
+
+        //})
+
+
+        //Function.prototype.myCall = function (context) {
+        //    context = context || window;
+        //    //var type = typeof context;
+        //    //[type].prototype.fn = this;
+        //    if (typeof context === 'number') {
+        //        //Number.prototype.fn = this
+        //         ['Number'].prototype.fn = this
+        //    }
+           
+
+        //    if (typeof context === 'string') {
+        //        ['String'].prototype.fn = this
+        //    }
+
+        //    if (typeof context === 'boolean') {
+        //        ['Boolean'].prototype.fn = this
+        //    }
+
+
+        //    //context.fn = this;
+        //    //console.log(context)
+
+        //    var args = [...arguments].slice(1)
+
+        //    context.fn(...args)
+
+        //    delete context.fn
+
+        //}
+        //Function.prototype.call2 = function () {
+        //    //obj即相当于上面的k
+        //    var obj = arguments[0];
+
+        //    //this相当于上面的a
+        //    obj[Symbol.for('fn')] = this;
+
+        //    //获取call第二个开始的参数
+        //    var args = [];
+        //    for (var i = 1; i < arguments.length; i++) {
+        //        args.push(arguments[i]);
+        //    };
+
+        //    //相当于k.a, 即将a的this指向k
+        //    obj[Symbol.for('fn')](...args);
+
+        //    delete obj[Symbol.for('fn')];
+        //}
+
+        ////a.call2($("div"));
+        //a.myCall(false);
+
+    </script>
+</head>
+<body>
+    <input type="file" accept="image/*" />
+    <div class="p">
+        <span class="s1 s">right</span>
+        <span class="s2 s">left</span>
+        <span class="s3 s"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="/js/jquery-1.11.0.min.js"></script>
+    <meta charset="utf-8" />
+    <style>
+        .abc {
+            padding: 10px 0px;
+            height: 20px;
+            width: 100px;
+            border: 1px solid red;
+            background-color: blue;
+        }
+
+        .tips {
+            position: fixed;
+            height: 40px;
+            background: rgba(100,100,100,1);
+            border-radius: 5px;
+            line-height: 40px;
+            color: #fff;
+            padding: 0px 10px;
+            z-index: 30;
+            font-size: 12px;
+        }
+            .tips:before {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: rgba(100,100,100,1);
+                transform: translateY(-5px) rotate(45deg);
+                left: -5px;
+                top: 50%;
+            }
+    </style>
+</head>
+<body>
+    <input type="text" class="SOGWarming abc" rule_desc="abc" />
+
+    <input type="text" class="SOGWarming abc" rule_desc="abc" />
+
+
+
+    <!--<div class="tips">abc</div>-->
+
+    <script>
+
+        $.fn.extend({
+            tips: function (msg) {
+                var id = "tips";
+                if (msg) {
+                    $(this).mouseover(function () {
+                        var str_html = '<div id="' + id + '" class="tips" >' + msg + '</div>';
+                        var e = $(str_html);
+                        var middle = (this.getBoundingClientRect().top + this.getBoundingClientRect().bottom) / 2
+                        e.css("left", this.getBoundingClientRect().right + 10);
+                        e.css("top", middle - 20);
+                        $("body").append(e);
+                    });
+                    $(this).mouseout(function () {
+                        $("#" + id).remove();
+                    });
+                } else {
+                    $(this).unbind("mouseover");
+                    $("#" + id).remove();
+                }
+            }
+        });
+
+
+
+
+
+
+        $(".SOGWarming").tips("公司名字不能为空");
+
+        $(".SOGWarming").click(function () {
+            $(this).removeClass("SOGWarming");
+            $(this).tips();
+        })
+
+
+
+        //$(".SOGWarming").mousemove(function (e) {
+        //    ShowTip.call(this, "edf");
+        //}).mouseout(function () {
+        //    HideTip();
+        //}).click(function () {
+        //    $(this).removeClass("SOGWarming");
+        //})
+
+
+
+        //function ShowTip(msg) {
+        //    var id = "tips";
+        //    //if ($("#" + id).length==0) {
+        //    //    return false;
+        //    //}
+        //    var str_html = '<div id="' + id + '" class="tips" >' + msg + '</span>';
+        //    var e = $(str_html);
+        //    var middle = (this.getBoundingClientRect().top + this.getBoundingClientRect().bottom) / 2
+        //    e.css("left", this.getBoundingClientRect().right + 10);
+        //    e.css("top", middle - 20);
+        //    $("body").append(e);
+        //}
+
+        //function HideTip() {
+        //    var id = "tips";
+        //    $("." + id).remove();
+        //}
+
+
+
+    </script>
+</body>
+</html>

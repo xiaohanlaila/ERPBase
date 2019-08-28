@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .wrap, .circle, .num {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        .wrap {
+            position: relative;
+            border: 10px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .circle {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            box-sizing: border-box;
+        }
+
+            .circle div {
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                box-sizing: border-box;
+                border-radius: 50%;
+            }
+
+        .num {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .left {
+            clip: rect(0, 100px, 200px, 0);
+            border: 10px solid #f00;
+        }
+
+        .right {
+            clip: rect(0, 200px, 200px, 100px);
+            border: 10px solid #f00;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="box"></div>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="abc"></div>
+</body>
+
+
+</html>
+<script type="text/javascript">
+
+    function Yuan(id, num) {
+        this.box = document.getElementById(id);//获取节点
+        this.box.className = 'wrap';
+
+        //创建节点circle
+        this.circle = document.createElement("div");
+        this.circle.className = "circle";
+        this.box.appendChild(this.circle);
+
+        //创建circle的子节点left
+        this.left = document.createElement("div");
+        this.left.className = "left";
+        this.circle.appendChild(this.left);
+
+        //创建circle的子节点right
+        this.right = document.createElement("div");
+        this.right.className = "right";
+        this.circle.appendChild(this.right);
+
+        //创建节点num
+        this.num = document.createElement("div");
+        this.num.className = "num";
+        this.box.appendChild(this.num);
+        this.num.innerHTML = '<span id="">' + num + '</span>%';
+
+        this.jz(num);
+    }
+
+    Yuan.prototype.jz = function (num) {
+        var i = 0;
+        var that = this;
+        var int = setInterval(function () {
+            that.gx(num / 10 * i);
+            i++;
+            if (i > 10) {
+                clearInterval(int)
+            }
+        }, 50);
+    }
+
+    Yuan.prototype.gx = function (n) {
+
+        if (n <= 50) {
+            this.right.style.display = 'none';
+            this.circle.style.clip = 'rect(0, 200px, 200px, 100px)';
+        } else {
+            this.right.style.display = 'block';
+            this.circle.style.clip = 'rect(auto, auto, auto, auto)';
+        }
+        this.left.style.transform = 'rotate(' + n * 360 / 100 + 'deg)';
+
+    }
+
+    var box = new Yuan('box', 25);
+    var box1 = new Yuan('box1', 100);
+    var box2 = new Yuan('box2', 75);
+    var box3 = new Yuan('box3', 66);
+
+
+    function SogYuan()
+    {
+        this.R = 10;
+        this.r = 5;
+        this.EmptyColor = "#ccc";
+        this.FullColor = "#000";
+        this.Show = function (html) {
+            alert(html + this.FullColor + this.EmptyColor);
+        };
+    }
+
+    var y1 = new SogYuan("id");
+    y1.R = 6;
+    y1.EmptyColor = "abc";
+    y1.Show("1")
+    y1.Show("2")
+
+
+</script>

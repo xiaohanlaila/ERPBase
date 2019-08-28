@@ -1,0 +1,682 @@
+﻿html, body {
+    height:100%;
+    width:100%;
+}
+body {
+   font-family:"Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+   background:#eaedf1; 
+   padding-top:50px;
+   font-size:13px;
+}
+ul, li {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.nav_header {
+    height:50px;
+    width:100%;
+    background:#373d41;
+    border-bottom:1px solid #2a2f32;
+    position:fixed;
+    top:0;
+    left:0;
+}
+.nav_header_logo {
+    color:#fff;
+    font-size:18px;
+    height:100%;
+    float:left;
+    line-height:50px;
+    padding:0 10px;
+    border-right:1px solid #2a2f32;
+    cursor:pointer;
+    width:239px;
+}
+    .nav_header_logo > img {
+        position:relative;
+        top:-5px;
+        margin-right:5px;
+    }
+    .nav_header_logo > span {
+        position:relative;
+        right:3px;
+    }
+
+.nav_header_shrink {
+    height:50px;
+    line-height:50px;
+    width:50px;
+    text-align:center;
+    float:left;
+    border-right:1px solid #2a2f32;
+    cursor:pointer;
+}
+    .nav_header_shrink > img {
+        height:16px;
+        width:auto;        
+    }
+
+.nav_content {
+    height:100%;
+    width:100%;
+    position:relative;
+    padding-left:239px;
+}
+.nav_aside {
+    height:100%;
+    width:239px;
+    position:absolute;
+    left:0;
+    top:0;
+    background:#42485b;
+    overflow-y:auto;
+}
+.nav_section {
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+.nav_aside_body, .nav_section_body {
+    height:100%;
+    width:100%;
+    position:relative;
+}
+.nav_aside_body {
+    padding-top:180px;
+}
+.nav_aside_head {
+    height:180px;
+    width:100%;
+    background:#383d4e;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.aside_head_img {
+    text-align:center;
+    padding:10px 0;
+    }
+.nav_aside_img {
+    display:block;
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    cursor:pointer;
+    margin:auto;
+    background-color:#D7DDE5;
+}
+.collapse_content {
+    height:100%;
+    width:100%;
+    overflow-y:auto;
+}
+.aside_head_name {
+    color:#fff;
+    font-size:17px;
+    text-align:center;
+    letter-spacing: 4px;
+    padding-bottom: 3px;
+}
+.aside_head_place {
+    color:#fff;
+    text-align:center;
+    letter-spacing: 2px;
+    padding:5px 0;
+    font-size:14px;
+}
+
+/*退出按钮*/
+.aside_head_list {
+    height:60px;
+    float:right;
+    text-align:center;
+    color:#fff;
+    padding-top:3px;
+    padding-right:10px;
+    position:relative;
+    cursor:pointer;    
+}
+    .aside_head_list:hover> small {
+        color:#3BB9EF;
+    }
+    .aside_head_list:hover> p {
+        color:#3BB9EF;
+    }
+    .aside_head_list > p {
+        padding-top:5px;
+        font-size:12px;
+        transition:all 0.5s ease;
+    }
+    .aside_head_list > small {
+        transition:all 0.5s ease;
+    }
+
+/*左侧图标*/
+.head_icon1:before {
+    content: "\f0ae";
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome; 
+    margin-right:5px;
+}
+.head_icon2:before {
+    content: "\f06b";
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon3:before {
+    content: '\f0f2';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon4:before {
+    content: '\f0c0';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon5:before {
+    content: '\f02d';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon6:before {
+    content: '\f022';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon7:before {
+    content: '\f085';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon8:before {
+    content: '\f091';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon9:before {
+    content: '\f009';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon10:before {
+    content: '\f005';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon11:before {
+    content: '\f091';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon12:before {
+    content: '\f02c';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon13:before {
+    content: '\f0f4';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon14:before {
+    content: '\f06b';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon15:before {
+    content: '\f0f8';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon16:before {
+    content: '\f004';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon18:before {
+    content: '\f09e';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon19:before {
+    content: '\f0d2';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon20:before {
+    content: '\f07c';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon21:before {
+    content: '\f0b1';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon22:before {
+    content: '\f109';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon23:before {
+    content: '\f013';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon25:before {
+    content: '\f0f7';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon26:before {
+    content: '\f0ac';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon27:before {
+    content: '\f0f1';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon28:before {
+    content: '\f0e8';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon29:before {
+    content: '\f108';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon30:before {
+    content: '\f073';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon31:before {
+    content: '\f080';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon32:before {
+    content: '\f0d5';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon35:before {
+    content: '\f0a1';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon51:before {
+    content: '\f018';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon54:before {
+    content: '\f0b1';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon39:before {
+    content: '\f098';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon40:before {
+    content: '\f0fd';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon41:before {
+    content: '\f076';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon42:before {
+    content: '\f085';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon43:before {
+    content: '\f0ad';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon44:before {
+    content: '\f0e3';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon46:before {
+    content: '\f0f2';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon47:before {
+    content: '\f0c0';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon52:before {
+    content: '\f0ae';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_icon53:before {
+    content: '\f09d';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+.head_iconnull:before {
+    content: '\f09e';
+    width: 16px;
+    text-align: left;
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right:5px;
+}
+
+/*左边菜单 开始*/
+#accordion {
+ 	width: 100%;
+ 	background: #42485b;
+ 	-webkit-border-radius: 4px;
+ 	-moz-border-radius: 4px;
+ 	border-radius: 4px;
+ }
+#accordion .link {
+	cursor: pointer;
+	display: block;
+	padding: 10px 15px;
+	color: #fff;
+	font-size: 14px;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#accordion li:last-child .link {
+	border-bottom: 0;
+}
+#accordion li i {
+	position: absolute;
+	left: 12px;
+	font-size: 18px;
+	color: #fff;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#accordion li i.fa-angle-down {
+	right: 12px;
+	left: auto;
+	font-size: 16px;
+    top: 12px;
+}
+#accordion li.open .link {
+	/*background:#3BB9EF;*/
+}
+#accordion li.open i.fa-angle-down {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+ .submenu {
+ 	display: none;
+ 	background: #333744;
+ 	font-size: 14px;
+ }
+ .submenu li {
+ 	/*border-bottom: 1px solid #4b4a5e;*/
+ }
+    .link:hover {
+        background:#3BB9EF;
+    }
+ .submenu span {
+ 	display: block;
+ 	text-decoration: none;
+ 	color: #fff;
+ 	padding: 12px;
+ 	padding-left: 35px;
+ 	-webkit-transition: all 0.25s ease;
+ 	-o-transition: all 0.25s ease;
+ 	transition: all 0.25s ease;
+    cursor:pointer;
+ }
+ .submenu span:hover {
+ 	background: #4A5064;
+ 	color: #FFF;
+     /*padding-left: 35px;*/
+ }
+    .submenu span.active {
+        background:#3BB9EF;
+        color: #FFF;
+        /*padding-left: 35px;*/
+    }
+/*左边菜单 结束*/
+
+
+/*关闭按钮*/
+.icon-close:before {
+    content: "\f011";
+    width: 18px;
+    font-size:16px;
+    text-align: center;
+    display: inline-block;
+    font-family: FontAwesome;
+}
+
+/*显示与隐藏菜单按钮*/
+.turn_off:before {
+    content: "\f03b";
+    width: 18px;
+    font-size:16px;
+    text-align: center;
+    display: inline-block;
+    font-family: FontAwesome;
+    color:#D7D8DA;
+}
+.turn_on:before {
+    content: "\f03c";
+    width: 18px;
+    font-size:16px;
+    text-align: center;
+    display: inline-block;
+    font-family: FontAwesome;
+    color:#D7D8DA;
+}
+
+/*右边内容*/
+#tab_content {
+    height:100%;
+    width:100%;
+    position:relative;
+    padding-top:30px;
+}
+.tabs-header {
+    position:absolute;
+    left:0;
+    top:0;
+}
+.tabs-panels ,.tabs-panels .panel,.tabs-panels .panel-body{
+    height:100% ;
+}
+.tabs-panels .panel-body {
+    overflow:hidden;
+}
+.tabs-wrap,.tabs-panels,.tabs-header,.panel-body,.tabs-panels {
+     width:100% !important;
+}
+
+
+/*右边页面头部的标签*/
+.tabs li a.tabs-inner {
+    background-color: #F0F0F0;
+    background: #F0F0F0;
+}
+.tabs li a.tabs-inner {
+    border-color:#c8c8c8;
+}
+.tabs li a.tabs-inner:hover {
+    background: #fff;
+    color: #000000;
+    filter: none;
+}
+.tabs li.tabs-selected a.tabs-inner {
+    color:#333;
+}
+.tabs li.tabs-selected a.tabs-inner {
+    border:1px solid #a1a1a1;
+    border-bottom: 1px solid #ffffff;
+}
+.tabs-header {
+    border-color:#c8c8c8;
+}
+.tabs-header, .tabs-tool {
+    background-color: #F0F0F0;
+}
+.tabs-scroller-left, .tabs-scroller-right {
+    border:none;
+}
+.tabs li.tabs-selected a.tabs-inner {
+    background:#fff!important;
+}
+.tabs li a:hover.tabs-close {
+    background: url(images/tabs_icons.png) no-repeat -34px center;
+    background-color: #eaf2ff!important;
+    border-radius:50%;
+}
+

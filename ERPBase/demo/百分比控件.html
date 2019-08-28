@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        //.Percent .a
+
+        //js与css分开 根节点一定有Percent的class
+
+        //本类库依赖可以依赖JQ
+        function Percent(jq_selector, json) {
+            //$(jq_selector)hasClass("Percent")  true
+            this.show = function (p) {
+                //里面的文字大小依赖于小圆半径的大小
+                //p>0 and p<1
+                //记录最好一次的P,并且按照time的时间进行动画
+            }
+        }
+        //类库
+
+        //hui code
+
+        var obj_json = {};
+        obj_json["R"] = 50;//大圆半径
+        obj_json["r"] = 40;//小圆半径
+        obj_json["r_backgroundColor"] = "#fff";//小圆的背景颜色
+        obj_json["r_color"] = "#000";//小圆的文字颜色
+        obj_json["R_backgroundColor"] = "#666";//轨道颜色
+        obj_json["R_color"] = "#3bb9ef";//进度颜色
+        obj_json["time"] = 1000//已毫秒为单位
+        obj_json["text_size"] = 14;
+
+        
+
+        var p = new Percent("#a", obj_json);
+        p.show(0.5);
+
+        var p1 = new Percent(".b", obj_json);
+        p1.show(0.5);//0% 到 50% 
+        window.setTimeout(function () {
+            p1.show(0.6);//50% 到 60%
+        }, 1000)
+      
+        p1.show(0.1);//10  到 10
+        //0  到 10
+
+       
+    </script>
+</head>
+<body>
+    <div class="Percent" id="a">
+
+
+    </div>
+
+    <div class="Percent b" id="b">
+
+
+    </div>
+
+    <div class="Percent b" id="c">
+
+
+    </div>
+</body>
+</html>

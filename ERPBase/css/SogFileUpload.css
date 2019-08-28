@@ -1,0 +1,66 @@
+﻿/*文件样式*/
+.SogFileUpload {
+    font-size: 14px;
+    color: #666;
+    border: 1px solid #ccc;
+    width: 400px;
+    height: 36px;
+    padding: 5px 12px;
+    vertical-align: middle;
+}
+
+/*图标按钮*/
+.file_icon, .folder_icon {
+    color: #3bb9ef;
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 20px;
+    float: left;
+}
+    .file_icon:hover, .folder_icon:hover {
+        color: #0d82ae;
+    }
+
+
+/*文件或者文件夹路径*/
+.file_url, .down_file, .folder_url, .view_folder {
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    cursor: pointer;
+}
+    .file_url:hover {
+        display: inline-block;
+        text-decoration: none;
+        color: #3bb9ef;
+    }
+    .file_url:link {
+        color: #3bb9ef;
+    }
+
+/*文件上传时显示百分比*/
+.file_precent {
+    float: right;
+    background-color: red;
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    color: #fff;
+    padding-top: 2px;
+    text-align: center;
+    font-weight: 400;
+}
+
+/*清除文件或者文件夹的按钮*/
+.file_clear, .folder_clear {
+    float: right;
+    font-size: 15px;
+    cursor: pointer;
+    /*margin-right: 20px;*/
+    padding: 5px;
+}
+    .file_clear:hover, .folder_clear:hover {
+        background-color: #eee;
+    }

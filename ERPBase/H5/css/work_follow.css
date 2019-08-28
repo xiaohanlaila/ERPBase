@@ -1,0 +1,556 @@
+﻿
+body, html {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #ccc !important;
+}
+
+input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ccc !important;
+}
+
+input:-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #ccc !important;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ccc !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.hide1 {
+    opacity: 0 !important;
+}
+
+/*禁止鼠标*/
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+}
+
+
+/*选择用户 开始*/
+.iframe_user, .iframe_list, .iframe {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 100%;
+    transition: left .2s ease-in-out;
+    border: 0px;
+    z-index: 2;
+}
+/*选择用户 结束*/
+
+/*提示用户 开始*/
+.tip_message {
+    position: fixed;
+    bottom: -50px;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: bottom 0.2s ease-in,opacity 0.2s ease-out;
+}
+/*提示用户 结束*/
+
+/*确认弹出框  开始*/
+.ConfirmBox {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%);
+    width: 60%;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 10;
+}
+
+    .ConfirmBox .title {
+        margin-top: 15px;
+        font-weight: 900;
+        font-size: 16px;
+    }
+
+    .ConfirmBox .message {
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+
+    .ConfirmBox .title, .ConfirmBox .message {
+        text-align: center;
+        padding: 3px 0px;
+    }
+
+    .ConfirmBox .button {
+        border-top: 1px solid #ccc;
+    }
+
+    .ConfirmBox .btn_cancle, .ConfirmBox .btn_yes {
+        width: 48%;
+        display: inline-block;
+        text-align: center;
+        padding: 10px 0px;
+        color: rgba(0,123,252,1);
+    }
+
+        .ConfirmBox .btn_cancle:active, .ConfirmBox .btn_yes:active {
+            background: #eee;
+        }
+
+    .ConfirmBox .btn_yes {
+        font-weight: 900;
+    }
+
+    .ConfirmBox .btn_cancle {
+        border-right: 1px solid #ccc;
+    }
+
+/*确认弹出框  结束*/
+
+.Iback {
+    background-color: red;
+    position: fixed;
+    width: 90px;
+    height: 45px;
+    left: 0;
+    top: 0px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.Imore {
+    background-color: red;
+    position: fixed;
+    width: 90px;
+    height: 45px;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+/*水波纹效果*/
+.WaterWave {
+    position: relative;
+    overflow: hidden;
+}
+
+    .WaterWave:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, #666 10%, transparent 10%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform 0.3s, opacity 0.5s;
+    }
+
+    .WaterWave:active:after {
+        transform: scale(0, 0);
+        opacity: 0.3;
+        transition: 0s;
+    }
+
+
+.content_scroll .no_data {
+    color: #666;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%);
+}
+
+.WF_STATUS0 {
+    background-color: #FFEBEB;
+}
+
+.container {
+    background-color: #eee;
+}
+
+/*头部 开始*/
+.head {
+    color: #fff;
+    background-color: rgba(96,199,146,1);
+    text-align: center;
+    padding: 15px 20px 0px 20px;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.icon_back {
+    float: left;
+    display: inline-block;
+    border: 1px solid #fff;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) translateY(10px);
+    border-top: 0px;
+    border-right: 0px;
+}
+
+.icon_more {
+    float: right;
+    line-height: 30px;
+    position: relative;
+}
+
+.icon_msg_num {
+    background-color: red;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    padding: 0px;
+    line-height: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+/*头部 结束*/
+
+
+/*表单 开始*/
+
+.form {
+    margin-top: 5px;
+    background-color: #fff;
+}
+
+    .form .item {
+        height: 50px;
+        border-bottom: 1px solid #eee;
+    }
+
+        .form .item:after {
+            content: '';
+            float: right;
+            display: inline-block;
+            border: 1px solid #ccc;
+            width: 10px;
+            height: 10px;
+            transform: rotate(225deg) translateY(-24px);
+            border-top: 0px;
+            border-right: 0px;
+        }
+
+
+.item3 {
+    height: 100px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+
+.phone_control {
+    width: 70%;
+    border: 0px;
+    border-style: none;
+    outline-style: none;
+    height: 30px;
+    text-align: right;
+    color: #666;
+    font-size: 14px;
+}
+
+.full_control {
+    border: 0px;
+    border-style: none;
+    outline-style: none;
+    width: 100%;
+    height: 100px;
+    padding: 5px 10px;
+    font-size: 14px;
+    /*margin: 3px;*/
+    color: #666;
+}
+
+.item_head {
+    width: 18%;
+    line-height: 50px;
+    display: inline-block;
+    text-align: right;
+    font-size: 14px;
+}
+
+/*表单 结束*/
+
+
+/*审批人 开始*/
+.person {
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.person_title_text {
+    font-size: 16px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.person_title_desc {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.person_title {
+    border-bottom: 1px solid #eee;
+}
+
+.img_person {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 10%;
+}
+/*审批人 结束*/
+
+/*底部按钮 开始*/
+.btn {
+    color: #fff;
+    background: rgba(96,199,146,1);
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    position: fixed;
+    bottom: 0;
+    font-size: 18px;
+}
+
+    /*.btn:active {
+        background: rgba(66,169,116,1);
+    }*/
+/*底部按钮 结束*/
+
+
+/*列表页  开始*/
+.content .head_image {
+    width: 45px;
+    height: 45px;
+    margin: 5px 10px;
+    border-radius: 50%;
+}
+
+.item1 {
+    height: 60px;
+    border-bottom: 1px solid #eee;
+    padding: 5px 0px;
+    font-size: 12px;
+    position: relative;
+}
+
+    .item1:active {
+        /*background-color: #eee;*/
+    }
+
+    .item1 .message {
+        display: inline-block;
+        position: absolute;
+        top: 14px;
+        width: calc(100% - 75px);
+    }
+
+    .item1 .name {
+        font-size: 13px;
+    }
+
+    .item1 .bottom {
+        color: #999;
+    }
+
+
+.message .top {
+    margin-bottom: 9px;
+}
+
+
+.item1 .stauts {
+    float: right;
+}
+
+.c0 {
+    /*待审核*/
+    color: rgba(251,184,103,1);
+}
+
+.c1 {
+    /*已审核*/
+    color: rgba(96,199,146,1);
+}
+
+.c2 {
+    /*未通过*/
+    color: red;
+}
+
+
+.c3 {
+    /*待终审*/
+    color: mediumpurple;
+}
+
+.c4 {
+    /*已撤回*/
+    color: #ccc;
+}
+/*列表页  结束*/
+
+
+/*详情  开始*/
+div {
+    margin: 0px;
+}
+
+.request_person {
+    position: relative;
+    font-size: 13px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.head_image {
+    width: 50px;
+    height: 50px;
+    margin: 5px 5px;
+    border-radius: 50%;
+}
+
+
+
+.request_person .message {
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    padding-left: 10px;
+    /*width: calc(100% - 75px);*/
+}
+
+.request_person .name {
+    margin-bottom: 6px;
+}
+
+.detail_message {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0px;
+}
+
+    .detail_message .item {
+        padding: 2px 5px;
+        font-size: 13px;
+    }
+
+    .detail_message .key {
+        color: #666;
+        margin: 5px 10px;
+        display: inline-block;
+        min-width: 100px;
+    }
+
+    .detail_message .value {
+        color: #000;
+    }
+
+
+.work_follow {
+    /*padding-bottom: 10px;*/
+}
+
+    .work_follow .item {
+        background: #eee;
+    }
+
+    .work_follow .content {
+        margin-left: 20px;
+        padding-left: 20px;
+        border-left: 1px solid #ccc;
+        position: relative;
+        background: #eee;
+        /*display: inline-block;*/
+        height: 90px;
+        padding-top: 10px;
+    }
+
+    .work_follow .icon {
+        position: absolute;
+        top: 10px;
+        left: -10px;
+        font-size: 20px;
+        background: #eee;
+        transform: translateY(20px);
+    }
+
+    .work_follow .card {
+        background: #fff;
+        width: calc(100% - 10px);
+        height: 80px;
+        padding-top: 10px;
+        border-radius: 5px;
+    }
+
+        .work_follow .card:before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            transform: translateY(-35px) rotate(45deg) translateX(-7px);
+        }
+
+    .work_follow .time {
+        float: right;
+        color: #666;
+        font-size: 12px;
+        padding-right: 10px;
+    }
+
+    .work_follow .message, .work_follow .status {
+        font-size: 12px;
+    }
+
+    .work_follow .message {
+        margin: 8px 0px;
+        color: #666;
+    }
+
+    .work_follow .name {
+        font-size: 13px;
+    }
+
+
+    .work_follow .text {
+        display: inline-block;
+        width: calc(100% - 85px);
+    }
+/*详情  结束*/

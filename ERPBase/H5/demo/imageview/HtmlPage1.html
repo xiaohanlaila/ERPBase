@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="/H5/js/jquery-1.11.0.min.js"></script>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        .abc {
+        /*position:absolute;*/
+        width:500px;
+        height:500px;
+        top:50%;
+        left:50%;
+        background-color:red; 
+        }
+    </style>
+</head>
+<body>
+    <div class="abc"></div>
+    <script>
+        $("body").on("click", ".abc", function () {
+            alert("abc on click");
+        });
+
+        //$("body").click(function () {
+        //    alert("body click");
+        //});
+
+        //$(".abc").click(function () {
+        //    alert("abc click");
+        //});
+
+    </script>
+</body>
+</html>
